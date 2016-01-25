@@ -1,0 +1,3 @@
+#!/bin/bash
+
+curl -H "Content-Type:application/json" -vX PUT "http://localhost:5984/hiera/test/" -d @json | python -m json.tool
