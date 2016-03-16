@@ -7,16 +7,15 @@
   :output: json
 #  :failure: graceful
   :paths:
-    - '/%{::environment}/hosts&%{::trusted["clientcert"]}'
-    - '/%{::environment}/hosts&%{::fqdn}'
-    - '/%{::environment}/hosts&%{::hostname}'
-    - '/%{::environment}/domains&%{::domain}'
+    - '/%{::environment}/hosts::%{::trusted["clientcert"]}'
+    - '/%{::environment}/hosts::%{::fqdn}'
+    - '/%{::environment}/hosts::%{::hostname}'
+    - '/%{::environment}/domains::%{::domain}'
     - '/%{::environment}/%{::osfamily}'
-    - '/%{::environment}/%{::operatingsystem}&%{::operatingsystemrelease}'
-    - '/%{::environment}/%{::operatingsystem}&%{::operatingsystemmajrelease}'
+    - '/%{::environment}/%{::operatingsystem}::%{::operatingsystemrelease}'
+    - '/%{::environment}/%{::operatingsystem}::%{::operatingsystemmajrelease}'
     - '/%{::environment}/%{::operatingsystem}'
-    - '/%{::environment}/hostgroups&%{::hostgroup}'
+    - '/%{::environment}/hostgroups::%{::hostgroup}'
     - '/%{::environment}/default'
     - '/%{::environment}/simp_classes'
     - '/%{::environment}/simp_def'
-    - '/%{::environment}/simp::%{module_name}&default'
